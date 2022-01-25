@@ -1,18 +1,42 @@
-﻿Feature: Order product on site
+﻿Feature: Write a commentary
 
-I am as user
-I want to choose an item on site
-In order to pay for it immediately
+As a user 
+I want to write commentaries under player
+in order to share my own impression with others
 
-@tag1
-Scenario: Choose an item and poceed to basket for payment	
-	Given user is on the homepage
-  When user clicks on 'Search' field
-  And user input text 'Table' in the 'Search' field
-  And user choose first product and click 'Add' to basket
-  And user clicks on the shopping basket in the header
-  Then user is on the basket page
-  Then user check the chosen table is in the basket
-  When user clicks on 'Order the product'
-  And user confirms payment information
-  Then user sees pop-up 'Thank you for the ordering'
+As a user 
+I want to complain on other user's commentary
+In order hide spoilers 
+
+As a user
+I want to comment other user's commentary
+In order to discuss films
+
+
+Background: 
+Given user is on page with film
+
+Scenario: write a comment to film
+  When user clicks on field 'Написать отзыв'
+  And user inputs text 'Nice film'
+  And user click on 'Имя' field
+  And user inputs text 'Petya' 
+  And user clicks button 'Добавить'
+  Then user sees a message on the screen 'Комментарий успешно добавлен'
+
+Scenario: complain on commentary
+  When user chooses commentary 'Vasya'
+  And user clicks on button 'Пожаловаться на комментарий' 
+  And user clicks on button 'Содержит спойлер' on banner
+  And user clicks on button 'Отправить' 
+  Then user sees a window with message 'Мы рассмотрим ваше обращение'
+
+Scenario: comment other commentaries
+  When user chooses commentary 'Vasya'
+  And user clicks on button 'Ответить' under commentary
+  And user clicks on field 'Написать комментарий'
+  And user inputs text 'Nice film'
+  And user click on 'Имя' field
+  And user inputs text 'Petya' 
+  And user clicks button 'Отправить'
+  Then user sees text 'Nice film' under commented commentary
