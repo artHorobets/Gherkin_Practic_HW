@@ -1,35 +1,38 @@
 ﻿Feature: Choose films on site
 
 As a user 
-want to have a list of the latest films
-in order to be acquinted with new film productions
+I want to have a list of the new films 
+in order to be acquainted with new film production
 
-As a user 
-want to choose dramas ganres
+As a user
+I want to choose dramas genre
 in order to watch relevant films
 
-As a user 
-want to look for films by their names
-in order to see favorite content
+As a user
+I want to find my favorite film  by its name
+in order to watch it
+
 
 Background: 
 Given user on the homepage
 
- @HightPriority
-Scenario: One click chosen film 
+@HighPriority
+Scenario: Choose new films
   When user clicks on the "New films" button
   Then user sees chosen default page "Latest intakes" on the screen
   Then user sees a text "Смотреть новинки фильмов в HD онлайн"
   Then user can choose film made in 2022
 
- @Smoke
-Scenario: Quick sort out content 
-  When user clicks on 'Film' button
-  And user clicks a 'Drama' button
+
+@Smoke
+Scenario: Search by genre
+  When user clicks on "Film" button
+  And user Clicks a 'Drama' button 
   And user clicks on 'Popular' filter
   Then user sees a sorted content of certain genre
 
- @Smoke
+
+@Smoke
 Scenario: Search a film by its name
   When user clicks on "Search" field
   And user inputs an 'Avatar' in this field
