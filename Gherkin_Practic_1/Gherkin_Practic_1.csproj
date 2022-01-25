@@ -45,8 +45,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="FeatureFiles\Feature1.feature" />
-    <None Include="FeatureFiles\Feature2.feature" />
+    <None Include="FeatureFiles\WriteACommentary.feature" />
+    <None Include="FeatureFiles\ChooseFilmsOnSite.feature" />
+    <None Include="FeatureFiles\ChangePlayerConfiguration.feature" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="FeatureSteps\" />

@@ -14,7 +14,7 @@ In order to discuss films
 
 
 Background: 
-Given user is on page with film
+Given user is on page with film 'Butterfly effect'
 
 Scenario: write a comment to film
   When user clicks on field 'Написать отзыв'
@@ -23,6 +23,7 @@ Scenario: write a comment to film
   And user inputs text 'Petya' 
   And user clicks button 'Добавить'
   Then user sees a message on the screen 'Комментарий успешно добавлен'
+  And text 'Petya' appears above previous commentaries
 
 Scenario: complain on commentary
   When user chooses commentary 'Vasya'
