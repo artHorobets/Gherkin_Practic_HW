@@ -22,12 +22,12 @@ Scenario: choose version of translation
 
 Scenario: change quality settings 
   When user clicks on 'Cog' button
-  And user Clicks on 'Качество' button in drop-down menu
-  And user clicks on '360p' button in drop-down menu
+  And user clicks on 'Качество' button in drop-up menu
+  And user clicks on '360p' button in drop-up menu
   Then user sees button '360p' marked as chosen
-  And user sees closed 'Cog' in drop-down menu
+  And user sees closed 'Cog' in drop-up menu
 
 
 Scenario: change screen mode
   When user clicks on the 'Change screen size' button
-  Then videoplayer accepted full-screen mode
+  Then videoplayer accepts full-screen mode
